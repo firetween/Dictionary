@@ -17,9 +17,10 @@ while True:
         rus_list.clear()
         rus_list=loe_failist('rus.txt')
     if menu.upper()=='V':
-        v=input('Keel: est või rus')
+        v=input('Keel: est või rus - ')
         if v=='rus':
-            rus_list=correction(input('Введи слово: '))
+            rus_list=correction(input('Введи слово: '),rus_list)
+
             failisse(rus_list, 'rus.txt')
     if menu.upper()=='K':
         pass

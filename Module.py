@@ -18,15 +18,21 @@ def translate()->str:
     rus_list=loe_failist('rus.txt')
     est_list=loe_failist('est.txt')
     eng_list=loe_failist('eng.txt') 
+    print(rus_list)
+    wordInd=rus_list.index(word)
+    print(wordInd)
+    
     return word
 
 def correction(sona:str,mas:list)->list:
-    i=-1
-    for in range(len(mas)):
+    #mas=[]
+    print(mas)
+    for i in range(len(mas)):
         if mas[i]==sona:       
             uus_sona=sona.replace(sona, input('Uus sõna: '))
             mas.insert(i, uus_sona)
             mas.remove(sona)
+            print(mas)
     return mas
 
 def failisse(mas:list, file:str):

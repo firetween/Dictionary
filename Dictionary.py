@@ -14,6 +14,7 @@ while True:
         #est_list=loe_failist('est.txt')
         #eng_list=loe_failist('eng.txt')
     if menu.upper()=='U':
+
         rus_list.clear()
         rus_list=loe_failist('rus.txt')
     if menu.upper()=='V':

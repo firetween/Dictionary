@@ -17,10 +17,24 @@ def translate()->str:
     word=input('Sisesta sõnu, mis on vaja tõlgida: ')
     rus_list=loe_failist('rus.txt')
     est_list=loe_failist('est.txt')
-    eng_list=loe_failist('eng.txt') 
-    print(rus_list)
-    wordInd=rus_list.index(word)
-    print(wordInd)
+    eng_list=loe_failist('eng.txt')
+    if word in rus_list:
+        wordInd=rus_list.index(word)
+        print(est_list[wordInd])
+        print(eng_list[wordInd])
+        print()
+    elif word in est_list:
+        wordInd=est_list.index(word)
+        print(rus_list[wordInd])
+        print(eng_list[wordInd])
+        print()
+    elif word in eng_list:
+        wordInd=eng_list.index(word)
+        print(rus_list[wordInd])
+        print(est_list[wordInd])
+        print()
+    else:
+        pass
     
     return word
 

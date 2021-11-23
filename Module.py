@@ -20,3 +20,15 @@ def translate()->str:
     eng_list=loe_failist('eng.txt') 
     return word
 
+def correction(sona:str,mas:list)->list:
+    i=-1
+    for in range(len(mas)):
+        if mas[i]==sona:       
+            uus_sona=sona.replace(sona, input('Uus sõna: '))
+            mas.insert(i, uus_sona)
+            mas.remove(sona)
+    return mas
+
+def failisse(mas:list, file:str):
+    pass
+

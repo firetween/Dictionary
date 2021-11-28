@@ -14,14 +14,13 @@ while True:
         #est_list=loe_failist('est.txt')
         #eng_list=loe_failist('eng.txt')
     if menu.upper()=='U':
-
         rus_list.clear()
         rus_list=loe_failist('rus.txt')
+        #uus_sona()
     if menu.upper()=='V':
         v=input('Keel: est või rus - ')
         if v=='rus':
             rus_list=correction(input('Введи слово: '),rus_list)
-
             failisse(rus_list, 'rus.txt')
     if menu.upper()=='K':
         pass

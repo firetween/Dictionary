@@ -6,12 +6,50 @@ def loe_failist(f)->list:
     fail.close()
     return mas
 
-def uus_sona(file:str,x:str)->list:
+def uus_sona(file1:str,file2:str,file3:str,x:str)->list:
     mas=[]
     with open(file,'a') as f:
         f.write(x+'\n')
-    mas=loe_failist(file)
+    mas=loe_failist(file)   
     return mas
+
+def checklang (s1,s2): #s1-russian
+    ru=list(map(ord,list('абвгдеёжзийклмнопрстуфхцчшщъыьэюя')))
+    en=list(map(ord,list('abcdefghiklmnopqrstvxyz')))
+    text=input('Please enter your word ').lower()
+    text1=list(map(ord,list(text)))
+    check = 0
+    for i in text1:
+        if i in en:
+            check+=1
+    if check == len(text1):
+        eng=text
+        print ('english ',eng)
+    check1=0
+    for i in text1:
+        if i in ru:
+            check1+=1
+    if check1==len(text1):
+        rus=text
+        print ('russian ', rus)
+    if text !='eng' or text!='rus':
+        print (f'{text} is not in dict')
+        f=input('Do you want to add? 1 - for yes, 0 - for no ')
+        if f==1:
+            if text=='eng':
+                s2.append(text)
+                s1.append(input('Enter translation '))
+            elif text=='rus':
+                s1.append(text)
+                s2.append(input('Enter translation '))
+        elif f==0:
+            print('Thank you')
+    if text in s1:
+        print(f'{text}-{s2[s1.index(text)]}')
+    elif text in s2:
+        print(f'{text}-{s1[s2.index(text)]}')
+    else:
+        (f'{text} is not in dict')
 
 def translate()->str:
     word=input('Sisesta sõnu, mis on vaja tõlgida: ')
@@ -34,7 +72,7 @@ def translate()->str:
         print(est_list[wordInd])
         print()
     else:
-        pass
+        print('Этого слова нет в словаре')
     
     return word
 
